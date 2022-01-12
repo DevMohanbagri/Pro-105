@@ -4,7 +4,7 @@ with open('../csv/stdev-105.csv', newline='') as f:
     reader = csv.reader(f)
     file_data = list(reader)
 
-#Removing the title from the dataset
+#If I don't type this it shows error
 data = file_data.pop(0)
 print(data)
 
