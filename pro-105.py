@@ -4,26 +4,23 @@ with open('../csv/stdev-105.csv', newline='') as f:
     reader = csv.reader(f)
     file_data = list(reader)
 
-
+data = file_data[0]
+print(data)
+def  mean(dataset):
+    n = len(dataset)
+    total = 0
+    for x in dataset:
+         total += float(x)
     
-data = file_data.pop(0)
-
-
-
-n = len(data)
-total = 0
-for x in data:
-    total += int(x[1])
-    print(x)
-mean = total/n
-print(mean)
+    mean = total/n
+    return mean
 
 # Squaring and getting the values
 squared_list = []
-print(data)
 
-for x in data:
-    a = x-mean(data)
+
+for no in data:
+    a = int(no)-mean(data)
     a = a**2
     squared_list.append(a)
 
@@ -33,8 +30,8 @@ sum = 0
 for i in squared_list:
     sum += i
 
-result = sum/(n-1)
-
+result = sum/(len(data)-1)
+print('result', result)
 standard_deviation = math.sqrt(result)
 
 print("Standard Deviation = "+str(standard_deviation))
